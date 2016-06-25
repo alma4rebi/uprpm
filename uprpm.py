@@ -50,13 +50,13 @@ init_check()
 
 
 def get_ip(interface):
-	return [subprocess.Popen("ip add |grep %s |grep inet"%interface,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].decode("utf-8").split()[1][0:12],interface]
+	return [subprocess.Popen("ip add |grep %s |grep inet"%interface,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].decode("utf-8").split()[1][0:-3],interface]
 	
 def wls_enps():
 	count=0
 	interface={}
 	wl_enp=subprocess.Popen("ip add |grep wl;ip add|grep en",stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].decode("utf-8").split()
-	print ()
+	
 
 	for word in wl_enp:
 		if word.startswith("wl") or word.startswith("en"):
