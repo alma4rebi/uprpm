@@ -61,7 +61,7 @@ def wls_enps():
 		if word.startswith("wl") or word.startswith("enp"):
 			if word not in interface.values():
 				try :
-					subprocess.Popen("ip add |grep %s |grep inet"%word,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].split()[1][0:12].decode("utf-8")
+					subprocess.Popen("ip add |grep %s |grep inet"%word,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].split()[1][0:-3].decode("utf-8")
 				except :
 					continue
 				count+=1
