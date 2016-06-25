@@ -55,7 +55,7 @@ def get_ip(interface):
 def wls_enps():
 	count=0
 	interface={}
-	wl_enp=subprocess.Popen("ip add |grep wl;ip add|grep enp",stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].decode("utf-8").split()
+	wl_enp=subprocess.Popen("ip add |grep wl;ip add|grep en",stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()[0].decode("utf-8").split()
 
 	for word in wl_enp:
 		if word.startswith("wl") or word.startswith("enp"):
