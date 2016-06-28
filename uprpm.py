@@ -43,7 +43,7 @@ def init_check():
 		sys.exit("Version Not Supported.")
 		
 	if not sys.version.startswith("3"):
-		sys.exit("Use Python 3 Try run python3 fmac.py")
+		sys.exit("Use Python 3 Try run python3 uprpm.py")
 
 init_check()
 
